@@ -26,7 +26,7 @@ $(document).ready(function() {
 				// If a user enters "Los Angeles" or "LA" or "LAX" make the background of the page la.jpg
 				
 				else if (userCity == "Los Angeles" || userCity == "LA" || userCity == "LAX") {
-					$("body").css("background-image", "url(images/la.jpg"));
+					$("body").css("background-image", "url(images/la.jpg");
 				}
 
 				// If a user enters "Austin" or "ATX" make the background of the page austin.jpg
