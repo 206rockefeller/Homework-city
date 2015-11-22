@@ -1,15 +1,36 @@
 $(document).ready(function() {
 	console.log("ready!");
 
+	// const $dd = $(".drop-down");
+
+	// ["NYC", "SF", "LA", "ATX", "SYD"]
+	// .forEach(city => {
+	// 	$dd.append( "<option>" + city + "</option>" );
+	// });
+
+	// $dd.change(function(e){
+	// 	$("body").attr("class", $(this).val().toLowerCase());
+	// });
+
+
 
 	// when input in search bar trigger event listener 
 
-	$("form").submit(function(e){
+
+	var cities = ["NYC", "SF", "LA", "ATX", "SYD"];
+
+// $(".drop-down").append( "<option>NYC</option>" );
+
+ 	for (var i = 0, length = cities.length; i < length; i++) {
+ 		$(".drop-down").append( "<option>" + cities[i] + "</option>" );
+ 	}
+
+	$(".drop-down").change(function(e){
 		e.preventDefault();
 		
 		// capture the city the user inputs 
 		
-		var userCity = $("#city-type").val().toLowerCase();
+		var userCity = $(this).val().toLowerCase();
 
 		var brickWall;
 
@@ -46,13 +67,12 @@ $(document).ready(function() {
 		// If user enters an invalid city display error msg 
 
 		if (brickWall) {
-			$("body").css("background-image", "url(images/" + brickWall +".jpg)");
+			$("body").attr("class", brickWall);
 		} else {
 			alert('HEY STUPID!');
 		}
 
-		
-		$(this).trigger("reset");
 
 	});
 });
+
